@@ -11,23 +11,70 @@ REQUIRED_NOTEBOOKS = (
     "2-Regression/3-Linear/notebook.ipynb",
     "2-Regression/4-Logistic/notebook.ipynb",
 )
+REQUIRED_ARTIFACTS = (
+    "quiz-answers.md",
+    "1-Introduction/1-intro-to-ML/answers.md",
+    "1-Introduction/2-history-of-ML/answers.md",
+    "1-Introduction/2-history-of-ML/timeline/index.html",
+    "1-Introduction/3-fairness/answers.md",
+    "1-Introduction/4-techniques-of-ML/answers.md",
+    "2-Regression/1-Tools/answers.md",
+    "2-Regression/1-Tools/notebook.ipynb",
+    "2-Regression/2-Data/answers.md",
+    "2-Regression/2-Data/notebook.ipynb",
+    "2-Regression/3-Linear/answers.md",
+    "2-Regression/3-Linear/notebook.ipynb",
+    "2-Regression/4-Logistic/answers.md",
+    "2-Regression/4-Logistic/notebook.ipynb",
+)
+APPROVED_SKIPS = (
+    "External environment-training courses and videos",
+    "External Responsible AI notebook",
+    "Data-scientist interview",
+    "Cloud deployment",
+)
 
 
 def assert_executed_notebook(test_case, relative_path):
     notebook = json.loads((PORTFOLIO_ROOT / relative_path).read_text())
     code_cells = [cell for cell in notebook["cells"] if cell["cell_type"] == "code"]
     test_case.assertTrue(code_cells)
+    test_case.assertEqual(
+        [cell["execution_count"] for cell in code_cells],
+        list(range(1, len(code_cells) + 1)),
+    )
     for cell in code_cells:
-        test_case.assertIsNotNone(cell["execution_count"])
-        test_case.assertNotIn("error", {output["output_type"] for output in cell["outputs"]})
+        for output in cell["outputs"]:
+            test_case.assertNotEqual(output["output_type"], "error")
+            if output["output_type"] == "stream":
+                test_case.assertNotEqual(output["name"], "stderr")
 
 
 class PortfolioTests(unittest.TestCase):
-    def test_required_notebooks_are_executed(self):
+    def test_all_required_notebooks_execute_cleanly(self):
         for relative_path in REQUIRED_NOTEBOOKS:
             with self.subTest(notebook=relative_path):
                 self.assertTrue((PORTFOLIO_ROOT / relative_path).is_file())
                 assert_executed_notebook(self, relative_path)
+
+    def test_index_links_every_required_artifact(self):
+        text = (PORTFOLIO_ROOT / "README.md").read_text()
+        links = re.findall(r"\[[^]]+\]\(([^)]+)\)", text)
+        local_links = {link.split("#", 1)[0] for link in links if "://" not in link}
+        self.assertTrue(set(REQUIRED_ARTIFACTS).issubset(local_links))
+        for relative_path in local_links:
+            with self.subTest(link=relative_path):
+                resolved = (PORTFOLIO_ROOT / relative_path).resolve()
+                self.assertTrue(resolved.is_relative_to(PORTFOLIO_ROOT.resolve()))
+                self.assertTrue(resolved.is_file())
+
+    def test_all_approved_skips_are_labeled(self):
+        text = (PORTFOLIO_ROOT / "README.md").read_text()
+        label = "**Skipped — approved exclusion:**"
+        self.assertEqual(text.count(label), len(APPROVED_SKIPS))
+        for category in APPROVED_SKIPS:
+            with self.subTest(category=category):
+                self.assertEqual(text.count(f"{label} {category}"), 1)
 
     def test_linnerud_answer_is_exploratory(self):
         path = PORTFOLIO_ROOT / "2-Regression/1-Tools/answers.md"
