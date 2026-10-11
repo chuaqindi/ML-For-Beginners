@@ -9,6 +9,7 @@ REQUIRED_NOTEBOOKS = (
     "2-Regression/1-Tools/notebook.ipynb",
     "2-Regression/2-Data/notebook.ipynb",
     "2-Regression/3-Linear/notebook.ipynb",
+    "2-Regression/4-Logistic/notebook.ipynb",
 )
 
 
@@ -53,6 +54,14 @@ class PortfolioTests(unittest.TestCase):
         for topic in (
             "correlation", "predictive accuracy", "linear", "polynomial", "limitation",
         ):
+            with self.subTest(topic=topic):
+                self.assertIn(topic, text)
+
+    def test_logistic_answers_cover_cleaning_standardization_and_imbalance(self):
+        path = PORTFOLIO_ROOT / "2-Regression/4-Logistic/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text().lower()
+        for topic in ("cleaning", "standardization", "class imbalance", "limitation"):
             with self.subTest(topic=topic):
                 self.assertIn(topic, text)
 
