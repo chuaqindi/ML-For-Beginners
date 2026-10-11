@@ -5,7 +5,10 @@ from pathlib import Path
 
 
 PORTFOLIO_ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_NOTEBOOKS = ("2-Regression/1-Tools/notebook.ipynb",)
+REQUIRED_NOTEBOOKS = (
+    "2-Regression/1-Tools/notebook.ipynb",
+    "2-Regression/2-Data/notebook.ipynb",
+)
 
 
 def assert_executed_notebook(test_case, relative_path):
@@ -29,6 +32,16 @@ class PortfolioTests(unittest.TestCase):
         self.assertTrue(path.is_file())
         text = path.read_text().lower()
         for topic in ("situps", "waist", "20", "small sample", "exploratory", "non-causal"):
+            with self.subTest(topic=topic):
+                self.assertIn(topic, text)
+
+    def test_data_answers_compare_plotting_libraries(self):
+        path = PORTFOLIO_ROOT / "2-Regression/2-Data/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text().lower()
+        for topic in (
+            "## matplotlib", "## seaborn", "scatter", "regression", "residual",
+        ):
             with self.subTest(topic=topic):
                 self.assertIn(topic, text)
 
