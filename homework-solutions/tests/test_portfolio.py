@@ -39,6 +39,21 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn("## Assignment — Skipped", text)
         self.assertIn("external training", text.lower())
 
+    def test_history_timeline_has_events_and_media(self):
+        lesson = PORTFOLIO_ROOT / "1-Introduction/2-history-of-ML"
+        answer_path = lesson / "answers.md"
+        html_path = lesson / "timeline/index.html"
+        css_path = lesson / "timeline/styles.css"
+        self.assertTrue(answer_path.is_file())
+        self.assertTrue(html_path.is_file())
+        self.assertTrue(css_path.is_file())
+        html = html_path.read_text()
+        self.assertGreaterEqual(html.count("data-year="), 8)
+        self.assertGreaterEqual(html.count("<iframe"), 2)
+        self.assertIn('href="styles.css"', html)
+        self.assertIn("<main", html)
+        self.assertGreaterEqual(html.count("<a href="), 8)
+
 
 if __name__ == "__main__":
     unittest.main()
