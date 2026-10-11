@@ -8,6 +8,7 @@ PORTFOLIO_ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_NOTEBOOKS = (
     "2-Regression/1-Tools/notebook.ipynb",
     "2-Regression/2-Data/notebook.ipynb",
+    "2-Regression/3-Linear/notebook.ipynb",
 )
 
 
@@ -41,6 +42,16 @@ class PortfolioTests(unittest.TestCase):
         text = path.read_text().lower()
         for topic in (
             "## matplotlib", "## seaborn", "scatter", "regression", "residual",
+        ):
+            with self.subTest(topic=topic):
+                self.assertIn(topic, text)
+
+    def test_linear_answers_explain_model_choice_and_accuracy(self):
+        path = PORTFOLIO_ROOT / "2-Regression/3-Linear/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text().lower()
+        for topic in (
+            "correlation", "predictive accuracy", "linear", "polynomial", "limitation",
         ):
             with self.subTest(topic=topic):
                 self.assertIn(topic, text)
