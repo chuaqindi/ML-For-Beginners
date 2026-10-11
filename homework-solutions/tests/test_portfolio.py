@@ -54,6 +54,35 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn("<main", html)
         self.assertGreaterEqual(html.count("<a href="), 8)
 
+    def test_fairness_answer_covers_lending_harms_and_controls(self):
+        path = PORTFOLIO_ROOT / "1-Introduction/3-fairness/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text().lower()
+        for topic in (
+            "lending", "allocation", "data representation",
+            "subgroup evaluation", "appeal", "monitoring",
+        ):
+            with self.subTest(topic=topic):
+                self.assertIn(topic, text)
+        self.assertIn("## assignment — skipped", text)
+        self.assertIn("external responsible ai notebook", text)
+
+    def test_ml_techniques_answer_has_workflow_and_skip_notes(self):
+        path = PORTFOLIO_ROOT / "1-Introduction/4-techniques-of-ML/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text()
+        self.assertIn("```mermaid", text)
+        for stage in (
+            "Decide on the question", "Collect and prepare data",
+            "Choose a training method", "Train the model",
+            "Evaluate the model", "Parameter tuning", "Predict",
+        ):
+            with self.subTest(stage=stage):
+                self.assertIn(stage, text)
+        self.assertIn("## Personal reflection — Skipped", text)
+        self.assertIn("## Assignment — Skipped", text)
+        self.assertIn("interview", text.lower())
+
 
 if __name__ == "__main__":
     unittest.main()
