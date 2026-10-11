@@ -30,6 +30,15 @@ class PortfolioTests(unittest.TestCase):
         self.assertEqual(quiz_ids, list(range(1, 17)))
         self.assertEqual(text.count("**Answer:**"), 48)
 
+    def test_intro_ml_has_diagram_and_skip(self):
+        path = PORTFOLIO_ROOT / "1-Introduction/1-intro-to-ML/answers.md"
+        self.assertTrue(path.is_file())
+        text = path.read_text()
+        self.assertIn("## Challenge", text)
+        self.assertIn("```mermaid", text)
+        self.assertIn("## Assignment — Skipped", text)
+        self.assertIn("external training", text.lower())
+
 
 if __name__ == "__main__":
     unittest.main()
