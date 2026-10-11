@@ -364,3 +364,6 @@ ML-For-Beginners.Rproj
 .env
 .venv
 venv
+
+# Local Git worktrees
+.worktrees/
