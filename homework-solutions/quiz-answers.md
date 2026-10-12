@@ -59,7 +59,7 @@ Answers follow the English quiz data in `quiz-app/src/assets/translations/en.jso
    **Answer:** harms for a group of people  
    Fairness analysis examines how system outcomes disadvantage groups, including protected groups.
 3. The five main types of harms include:  
-   **Answer:** allocation, quality of service, stereotyping, denigration, and over- or under-representation  
+   **Answer:** allocation, quality of service, stereotyping, denigration, and over- or under- representation
    These categories cover both material outcomes and representational harms.
 
 ## Quiz 6: Fairness and Machine Learning — Post-Lecture
