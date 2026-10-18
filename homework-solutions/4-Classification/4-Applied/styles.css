@@ -1,0 +1,30 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #283128; background: #f7f5ed; }
+body { margin: 0; line-height: 1.5; }
+main { max-width: 1100px; margin: auto; padding: 3rem 1.5rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 700; color: #4b6445; }
+h1 { font-family: Georgia, serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin: .6rem 0 1rem; font-weight: 500; }
+h2 { margin-top: 0; }
+.intro { max-width: 660px; font-size: 1.15rem; margin-bottom: 2.5rem; }
+.layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
+section { background: white; padding: 1.5rem; border: 1px solid #d9ded2; border-radius: 12px; }
+label { display: block; }
+input[type=search] { box-sizing: border-box; width: 100%; padding: .75rem; font: inherit; margin-top: .4rem; border: 1px solid #87947e; border-radius: 5px; }
+fieldset { border: 0; padding: 0; margin: 0; }
+legend { font-weight: 600; padding-bottom: .5rem; }
+#ingredients { max-height: 320px; overflow: auto; border-block: 1px solid #ddd; padding: .5rem 0; display: grid; grid-template-columns: 1fr 1fr; }
+#ingredients label { padding: .4rem; }
+input[type=checkbox] { accent-color: #33583c; width: 1.1rem; height: 1.1rem; vertical-align: middle; }
+.actions { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: 1rem; }
+button { font: inherit; font-weight: 600; padding: .8rem 1rem; color: white; background: #33583c; border: 1px solid #33583c; border-radius: 6px; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+button.secondary { background: white; color: #33583c; }
+:focus-visible { outline: 3px solid #b06315; outline-offset: 3px; }
+.results { background: #eef2e7; }
+.match { font-size: 1.5rem; text-transform: capitalize; }
+ol { padding-left: 1.5rem; }
+li { padding: .5rem; font-weight: 600; text-transform: capitalize; }
+.note, footer { color: #4f594d; font-size: .9rem; }
+footer { margin-top: 2rem; }
+a { color: #2d5536; }
+[hidden] { display: none !important; }
+@media (max-width: 700px) { .layout { grid-template-columns: 1fr; } main { padding: 1.5rem 1rem; } section { padding: 1rem; } }

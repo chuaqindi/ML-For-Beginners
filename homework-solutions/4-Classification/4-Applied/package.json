@@ -1,0 +1,7 @@
+{
+  "name": "pantry-recommender-homework",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node test-recommender.mjs"},
+  "dependencies": {"onnxruntime-web": "1.22.0"}
+}

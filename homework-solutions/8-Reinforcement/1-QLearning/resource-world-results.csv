@@ -1,0 +1,3 @@
+policy,won,lost,timeout,win_rate,mean_steps
+Random walk,16,484,0,0.032,4.996
+Q-learning,500,0,0,1.0,5.774

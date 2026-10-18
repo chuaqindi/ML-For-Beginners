@@ -1,0 +1,250 @@
+{
+  "endpoint": "https://api.mymemory.translated.net/get",
+  "langpair": "en|fr",
+  "mt": 1,
+  "records": [
+    {
+      "source": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife!",
+      "retrieved_at": "2026-10-18T17:23:58.702511+00:00",
+      "response": {
+        "responseData": {
+          "translatedText": "C’est une vérité presque incontestable qu’un jeune homme possesseur d’une grande fortune doit avoir besoin d’une épouse.",
+          "match": 0.97
+        },
+        "quotaFinished": false,
+        "mtLangSupported": null,
+        "responseDetails": "",
+        "responseStatus": 200,
+        "responderId": null,
+        "exception_code": null,
+        "matches": [
+          {
+            "id": "583304252",
+            "segment": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+            "translation": "C’est une vérité presque incontestable qu’un jeune homme possesseur d’une grande fortune doit avoir besoin d’une épouse.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": "0",
+            "reference": null,
+            "usage-count": 5,
+            "subject": "All",
+            "created-by": "Public_Corpora",
+            "last-updated-by": "Public_Corpora",
+            "create-date": "2014-02-01 22:06:56",
+            "last-update-date": "2014-02-01 22:06:56",
+            "match": 0.97,
+            "penalty": 0
+          },
+          {
+            "id": "803894685090757383",
+            "segment": "IT is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife.",
+            "translation": "C’est une vérité presque incontestable qu’un jeune homme possesseur d’une grande fortune doit être en quête d’une épouse.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": 74,
+            "reference": null,
+            "usage-count": 2,
+            "subject": "",
+            "created-by": "MateCat",
+            "last-updated-by": "MateCat",
+            "create-date": "2026-03-04 15:13:14",
+            "last-update-date": "2026-03-04 15:13:14",
+            "match": 0.95,
+            "penalty": 0
+          },
+          {
+            "id": "703427612",
+            "segment": "It is a truth universally acknowledged, that a single man in posses-sion of a good fortune, must be in want of a wife.",
+            "translation": "C’est une vérité presque incontestable qu’un jeune homme possesseur d’une grande fortune doit avoir besoin d’une épouse.",
+            "source": "en-US",
+            "target": "fr-FR",
+            "quality": "74",
+            "reference": null,
+            "usage-count": 2,
+            "subject": "All",
+            "created-by": "MateCat",
+            "last-updated-by": "MateCat",
+            "create-date": "2018-11-27 10:47:46",
+            "last-update-date": "2018-11-27 10:47:46",
+            "match": 0.86,
+            "penalty": 0
+          }
+        ]
+      }
+    },
+    {
+      "source": "I have no money.",
+      "retrieved_at": "2026-10-18T17:24:00.638945+00:00",
+      "response": {
+        "responseData": {
+          "translatedText": "Je n'ai pas d'argent.",
+          "match": 1
+        },
+        "quotaFinished": false,
+        "mtLangSupported": null,
+        "responseDetails": "",
+        "responseStatus": 200,
+        "responderId": null,
+        "exception_code": null,
+        "matches": [
+          {
+            "id": "583287603",
+            "segment": "I have no money.",
+            "translation": "Je n'ai pas d'argent.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": "0",
+            "reference": null,
+            "usage-count": 2,
+            "subject": "All",
+            "created-by": "Public_Corpora",
+            "last-updated-by": "Public_Corpora",
+            "create-date": "2014-02-01 22:06:56",
+            "last-update-date": "2014-02-01 22:06:56",
+            "match": 1,
+            "penalty": 0
+          },
+          {
+            "id": "496707403",
+            "segment": "I have no money.",
+            "translation": "Je ne ai pas de la monnaie.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": "74",
+            "reference": null,
+            "usage-count": 2,
+            "subject": "All",
+            "created-by": "MateCat",
+            "last-updated-by": "MateCat",
+            "create-date": "2015-02-24 08:41:11",
+            "last-update-date": "2015-02-24 08:41:11",
+            "match": 0.99,
+            "penalty": 0
+          },
+          {
+            "id": "583301645",
+            "segment": "But I have no money.",
+            "translation": "Mais je n'ai pas d'argent.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": "0",
+            "reference": null,
+            "usage-count": 2,
+            "subject": "All",
+            "created-by": "Public_Corpora",
+            "last-updated-by": "Public_Corpora",
+            "create-date": "2014-02-01 22:06:56",
+            "last-update-date": "2014-02-01 22:06:56",
+            "match": 0.91,
+            "penalty": 0
+          }
+        ]
+      }
+    },
+    {
+      "source": "It's raining cats and dogs.",
+      "retrieved_at": "2026-10-18T17:24:02.397527+00:00",
+      "response": {
+        "responseData": {
+          "translatedText": "Il pleut comme vache qui pisse.",
+          "match": 1
+        },
+        "quotaFinished": false,
+        "mtLangSupported": null,
+        "responseDetails": "",
+        "responseStatus": 200,
+        "responderId": null,
+        "exception_code": null,
+        "matches": [
+          {
+            "id": "583287998",
+            "segment": "It's raining cats and dogs.",
+            "translation": "Il pleut comme vache qui pisse.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": "74",
+            "reference": null,
+            "usage-count": 2,
+            "subject": "All",
+            "created-by": "Public_Corpora",
+            "last-updated-by": "Public_Corpora",
+            "create-date": "2014-02-01 22:06:56",
+            "last-update-date": "2014-02-01 22:06:56",
+            "match": 1,
+            "penalty": 0
+          },
+          {
+            "id": "803894684972496378",
+            "segment": "It's raining cats and dogs. ",
+            "translation": "It's raining cats and dogs. ",
+            "source": "en-US",
+            "target": "fr-FR",
+            "quality": 74,
+            "reference": null,
+            "usage-count": 2,
+            "subject": "",
+            "created-by": "MateCat",
+            "last-updated-by": "MateCat",
+            "create-date": "2025-04-30 16:15:24",
+            "last-update-date": "2025-04-30 16:15:24",
+            "match": 0.99,
+            "penalty": 0
+          },
+          {
+            "id": "803894684844240266",
+            "segment": "It's raining cats and dogs.",
+            "translation": "Il pleut comme vache qui pisse.",
+            "source": "en-US",
+            "target": "fr-FR",
+            "quality": 74,
+            "reference": null,
+            "usage-count": 2,
+            "subject": "",
+            "created-by": "MateCat",
+            "last-updated-by": "MateCat",
+            "create-date": "2023-11-21 17:57:06",
+            "last-update-date": "2023-11-21 17:57:06",
+            "match": 0.99,
+            "penalty": 0
+          }
+        ]
+      }
+    },
+    {
+      "source": "The orange robot misplaced seven umbrellas beside the silent library.",
+      "retrieved_at": "2026-10-18T17:24:04.196727+00:00",
+      "response": {
+        "responseData": {
+          "translatedText": "Le robot orange égara sept parapluies à côté de la bibliothèque silencieuse.",
+          "match": 0.85
+        },
+        "quotaFinished": false,
+        "mtLangSupported": null,
+        "responseDetails": "",
+        "responseStatus": 200,
+        "responderId": null,
+        "exception_code": null,
+        "matches": [
+          {
+            "id": 0,
+            "segment": "The orange robot misplaced seven umbrellas beside the silent library.",
+            "translation": "Le robot orange égara sept parapluies à côté de la bibliothèque silencieuse.",
+            "source": "en-GB",
+            "target": "fr-FR",
+            "quality": 70,
+            "reference": "Machine Translation.",
+            "usage-count": 2,
+            "subject": false,
+            "created-by": "MT!",
+            "last-updated-by": "MT!",
+            "create-date": "2026-10-18 17:24:03",
+            "last-update-date": "2026-10-18 17:24:03",
+            "match": 0.85,
+            "penalty": null,
+            "model": "neural"
+          }
+        ]
+      }
+    }
+  ]
+}

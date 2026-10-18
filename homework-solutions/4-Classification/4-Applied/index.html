@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pantry additions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="node_modules/onnxruntime-web/dist/ort.min.js"></script>
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">A machine learning kitchen experiment</p>
+  <h1>What could you add?</h1>
+  <p class="intro">Choose what is in your pantry. Explore a cuisine match and three ingredients often used in its training recipes.</p>
+  <div class="layout">
+    <section aria-labelledby="pantry-title">
+      <h2 id="pantry-title">Your pantry</h2>
+      <label for="search">Find an ingredient</label>
+      <input id="search" type="search" placeholder="Try cumin, tofu, or sesame…">
+      <p id="count">0 selected</p>
+      <fieldset><legend>Available ingredients</legend><div id="ingredients"></div></fieldset>
+      <div class="actions">
+        <button id="predict" disabled>Suggest additions</button>
+        <button id="clear" class="secondary" type="button">Clear selection</button>
+      </div>
+    </section>
+    <section class="results" aria-labelledby="result-title">
+      <h2 id="result-title">Your next ingredients</h2>
+      <p id="status" role="status">Loading the model…</p>
+      <div id="result" hidden>
+        <p id="cuisine" class="match"></p>
+        <ol id="suggestions"></ol>
+        <p class="note">Suggestions rank frequent ingredients missing from your selection. Check allergies and dietary needs before using them.</p>
+      </div>
+      <p class="note">This small dataset covers five cuisine labels. A match is a learned association, not a recipe or a claim of authenticity.</p>
+    </section>
+  </div>
+  <footer>Data: Microsoft ML-For-Beginners, originally <a href="https://www.kaggle.com/hoandan/asian-and-indian-cuisines">Asian and Indian Cuisines</a>. Inference runs locally in your browser. <span id="metrics"></span></footer>
+</main>
+</body>
+</html>

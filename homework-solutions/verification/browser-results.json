@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-18T17:25:23.328Z",
+  "browser": "153.0.8010.12",
+  "checks": [
+    "Pumpkin: submitting month 10 displays a formatted model prediction.",
+    "Pumpkin: browser validation rejects missing, fractional, and out-of-range months.",
+    "Pumpkin: bypassing browser validation still returns HTTP 400 with an accessible error.",
+    "Pumpkin: desktop and 390px mobile layout captured; no mobile horizontal overflow.",
+    "Pantry: all 380 ingredients load with real WASM inference; empty selections show an error.",
+    "Pantry: cumin/cardamom/yogurt predicts Indian and recommends turmeric/onion/coriander.",
+    "Pantry: ingredient search filters correctly, handles no matches, and restores all choices.",
+    "Pantry: desktop and 390px mobile layout captured; no mobile horizontal overflow.",
+    "Pantry: clearing removes selections and stale results; submitting again cannot reuse old ingredients.",
+    "Both apps: no uncaught browser JavaScript errors."
+  ]
+}

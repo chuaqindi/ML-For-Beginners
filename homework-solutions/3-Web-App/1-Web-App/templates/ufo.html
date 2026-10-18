@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFO reporting country</title>
+  <style>
+    body { font: 1.1rem/1.6 system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 1rem; }
+    label { display: block; margin-top: .7rem; }
+    input, button { font: inherit; padding: .4rem; }
+    button { margin-top: 1rem; }
+    .error { color: #9b1515; }
+  </style>
+</head>
+<body><main>
+  <h1>UFO reporting country</h1>
+  <p>A logistic regression exercise using historical sighting reports.</p>
+  <form action="{{ url_for('train') }}" method="post">
+    <button type="submit">Train local model</button>
+  </form>
+  {% if metrics %}<p role="status">Trained on {{ metrics.train_rows }} rows.
+    Test accuracy: {{ '%.3f'|format(metrics.accuracy) }};
+    macro F1: {{ '%.3f'|format(metrics.macro_f1) }}.</p>{% endif %}
+  <form action="{{ url_for('predict') }}" method="post">
+    <label for="seconds">Duration (1–60 seconds)</label>
+    <input id="seconds" name="seconds" type="number" min="1" max="60" step="any" value="20" required>
+    <label for="latitude">Latitude (−90 to 90)</label>
+    <input id="latitude" name="latitude" type="number" min="-90" max="90" step="any" value="40.7" required>
+    <label for="longitude">Longitude (−180 to 180)</label>
+    <input id="longitude" name="longitude" type="number" min="-180" max="180" step="any" value="-74" required>
+    <br><button type="submit">Predict country</button>
+  </form>
+  {% if prediction %}<p role="status">Likely country: {{ prediction }}</p>{% endif %}
+  {% if error %}<p role="alert" class="error">{{ error }}</p>{% endif %}
+  <p>Only Australia, Canada, Germany, UK, and US are modeled. Coordinates elsewhere still produce one of these labels. This model does not establish what caused a reported sighting.</p>
+</main></body>
+</html>

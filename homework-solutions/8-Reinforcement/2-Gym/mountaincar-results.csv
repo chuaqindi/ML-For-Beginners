@@ -1,0 +1,4 @@
+policy,mean_return,mean_steps,successes_under_200,max_steps
+Best greedy,-140.44,140.44,100,162
+Final greedy,-178.78,178.78,57,200
+Random,-200.0,200.0,0,200

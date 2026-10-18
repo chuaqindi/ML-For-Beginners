@@ -1,0 +1,82 @@
+[
+  {
+    "selected": [
+      "black_pepper",
+      "butter",
+      "cardamom",
+      "cashew",
+      "cayenne",
+      "chicken",
+      "cinnamon",
+      "cumin",
+      "lemon_juice",
+      "raisin",
+      "yogurt"
+    ],
+    "label": "indian",
+    "probabilities": [
+      8.07256997860466e-06,
+      0.9966283448451381,
+      1.729022981923078e-05,
+      4.7867454288891025e-05,
+      0.0032984249007751315
+    ],
+    "recommendations": [
+      "turmeric",
+      "onion",
+      "coriander"
+    ]
+  },
+  {
+    "selected": [
+      "beef",
+      "bell_pepper",
+      "broccoli",
+      "cane_molasses",
+      "pea",
+      "peanut",
+      "scallion",
+      "sesame_oil",
+      "sherry",
+      "soy_sauce",
+      "starch"
+    ],
+    "label": "chinese",
+    "probabilities": [
+      0.9728725333115585,
+      0.0013532833725300767,
+      0.004032968366457664,
+      0.00379708470368875,
+      0.017944130245764887
+    ],
+    "recommendations": [
+      "vegetable_oil",
+      "egg",
+      "vinegar"
+    ]
+  },
+  {
+    "selected": [
+      "crab",
+      "egg",
+      "japanese_plum",
+      "lemon",
+      "shrimp",
+      "soy_sauce",
+      "vegetable"
+    ],
+    "label": "japanese",
+    "probabilities": [
+      0.2916341776674252,
+      0.0017820160410349358,
+      0.27525241728049654,
+      0.3949681649936164,
+      0.03636322401742664
+    ],
+    "recommendations": [
+      "vinegar",
+      "vegetable_oil",
+      "sake"
+    ]
+  }
+]

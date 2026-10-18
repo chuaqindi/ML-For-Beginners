@@ -1,0 +1,5 @@
+policy,mean_return,min_steps,reached_200
+Best greedy,200.0,200,100
+Best sampled,200.0,200,100
+Final greedy,200.0,200,100
+Random,24.35,9,0

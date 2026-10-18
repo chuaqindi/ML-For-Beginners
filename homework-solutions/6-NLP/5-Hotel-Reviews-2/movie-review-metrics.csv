@@ -1,0 +1,4 @@
+method,accuracy,balanced_accuracy
+Majority baseline,0.5,0.5
+VADER (binary threshold 0),0.65,0.6499999999999999
+TF-IDF + logistic regression,0.856,0.856
