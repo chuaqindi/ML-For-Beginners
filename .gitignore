@@ -6,6 +6,7 @@
 dist 
 
 # User-specific files
+/.codex/config.toml
 *.rsuser
 *.suo
 *.user
